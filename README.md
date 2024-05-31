@@ -22,9 +22,30 @@ GET /hello --> [{ "value": "one" }, { "value": "two"}]
 /two --> { "value": "two" }
 ```
 
-## TODOs:
+## Configuration
+
+```json
+[{
+    "path": "/",
+    "upstreams": [
+        {
+            "clusterName": "httpbin",
+            "path": "/ip"
+        },
+        {
+            "clusterName": "httpbin",
+            "path": "/headers"
+        }
+    ],
+}]
+```
+
+
+## TODOs
 
 - [x] Scaffold the basic Wasm extension project
 - [x] Create (aka re-use) the Makefile for building the Wasm extension
 - [x] Implement calling multiple upstream services from the Wasm extension & aggregating the responses in some way
-- [ ] Make the extension configurable with the upstream services to call and the aggregation strategy
+- [x] Make the extension configurable with the upstream services to call and the aggregation strategy
+- [ ] Add authority and method to the configuration
+- [ ] Properly aggregate the responses

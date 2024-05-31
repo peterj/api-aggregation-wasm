@@ -36,6 +36,10 @@ static_resources:
                       type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
                       value:
                         config:
+                          configuration:
+                            "@type": type.googleapis.com/google.protobuf.StringValue
+                            value: |
+                              [{"path":"\/","upstreams":[{"id": "httpbin-ip", "clusterName":"httpbin","path":"\/ip"},{"id": "httpbin-headers", "clusterName":"httpbin","path":"\/headers"}, {"id": "httpbin-json", "clusterName":"httpbin","path":"\/json"}]}]
                           vm_config:
                             runtime: "envoy.wasm.runtime.v8"
                             code:
