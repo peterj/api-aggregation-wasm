@@ -25,6 +25,6 @@ GET /hello --> [{ "value": "one" }, { "value": "two"}]
 ## TODOs:
 
 - [x] Scaffold the basic Wasm extension project
-- [x] Create (aka re-use) the Makefile & Dockerfile for building the Wasm extension
-- [ ] Implement calling multiple upstream services from the Wasm extension & aggregating the responses in some way
+- [x] Create (aka re-use) the Makefile for building the Wasm extension
+- [x] Implement calling multiple upstream services from the Wasm extension & aggregating the responses in some way
 - [ ] Make the extension configurable with the upstream services to call and the aggregation strategy
